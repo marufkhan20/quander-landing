@@ -38,7 +38,7 @@ const floatingVariants = {
     y: [-10, 10, -10],
     transition: {
       duration: 6,
-      repeat: Number.POSITIVE_INFINITY,
+      repeat: Infinity,
       ease: "easeInOut",
     },
   },
@@ -49,7 +49,7 @@ const circleVariants = {
     rotate: 360,
     transition: {
       duration: 20,
-      repeat: Number.POSITIVE_INFINITY,
+      repeat: Infinity,
       ease: "linear",
     },
   },
@@ -64,23 +64,10 @@ export default function ProcessSection() {
       ref={ref}
       className="px-4 sm:px-10 xl:px-0 max-w-[1240px] mx-auto py-16 lg:py-20 relative"
     >
-      {/* <div className="absolute inset-0 z-0 rotate-90">
-        <Threads
-          amplitude={3}
-          distance={0.2}
-          enableMouseInteraction={false}
-          // color={[154, 154, 154]}
-        />
-      </div> */}
-
       <div className="text-center">
         <motion.span
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={
-            isInView
-              ? { opacity: 1, scale: 1, y: 0 }
-              : { opacity: 0, scale: 0.8, y: 20 }
-          }
+          animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
           transition={{
             type: "spring",
             stiffness: 200,
@@ -95,7 +82,7 @@ export default function ProcessSection() {
 
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{
           type: "spring",
           stiffness: 100,
@@ -110,7 +97,7 @@ export default function ProcessSection() {
 
       <motion.p
         initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{
           type: "spring",
           stiffness: 120,
@@ -129,7 +116,7 @@ export default function ProcessSection() {
         animate={isInView ? "visible" : "hidden"}
         className="mt-8 lg:mt-12 space-y-8 lg:space-y-12"
       >
-        {/* Video Creatives Card */}
+        {/* Video Creative Card */}
         <motion.div
           variants={cardVariants}
           whileHover={{
@@ -140,23 +127,13 @@ export default function ProcessSection() {
           className="ad-item border border-black/10 rounded-4xl grid grid-cols-1 lg:grid-cols-2 gap-7 overflow-hidden cursor-pointer group"
         >
           <div className="p-6 lg:ml-[70px] h-full flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
-            <motion.h2
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="text-3xl sm:text-4xl lg:text-[64px] text-tight-compact mb-5 leading-tight group-hover:text-[#293deb] transition-colors duration-300"
-            >
+            <h2 className="text-3xl sm:text-4xl lg:text-[64px] text-tight-compact mb-5 leading-tight group-hover:text-[#293deb] transition-colors duration-300">
               Video Creatives That Convert
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-              transition={{ delay: 1.0, duration: 0.6 }}
-              className="text-lg lg:text-xl text-tight-compact"
-            >
+            </h2>
+            <p className="text-lg lg:text-xl text-tight-compact">
               Transform simple images into cinematic visuals that convert.
               Create branded content in seconds — no studio, no team, no limits.
-            </motion.p>
+            </p>
           </div>
 
           <div className="flex justify-center relative p-6">
@@ -176,9 +153,7 @@ export default function ProcessSection() {
 
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={
-                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
-              }
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 1.2, duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
               className="absolute top-[100px] left-0 right-6 p-7 bg-black/30 rounded-[22px] backdrop-blur-[88.8px] flex items-center justify-center flex-col gap-4"
@@ -234,19 +209,13 @@ export default function ProcessSection() {
           className="ad-item border border-black/10 rounded-4xl grid grid-cols-1 lg:grid-cols-2 overflow-hidden px-6 lg:px-16 cursor-pointer group"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
-            }
             transition={{ delay: 1.4, duration: 0.8 }}
             className="py-11 order-2 lg:order-1"
           >
             <div className="relative size-[432px] mx-auto">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
-                }
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 1.6, duration: 0.6 }}
                 whileHover={{ scale: 1.1, rotate: 2 }}
                 className="absolute left-0 top-[50%] transform translate-y-[-50%]"
@@ -257,9 +226,7 @@ export default function ProcessSection() {
               <div className="absolute left-[50%] top-0 transform translate-x-[-50%]">
                 <motion.div
                   initial={{ opacity: 0, y: -30 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
-                  }
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 1.8, duration: 0.6 }}
                   whileHover={{ scale: 1.1, rotate: -2 }}
                 >
@@ -267,9 +234,7 @@ export default function ProcessSection() {
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
-                  animate={
-                    isInView ? { opacity: 1, y: -45 } : { opacity: 0, y: 30 }
-                  }
+                  animate={isInView ? { opacity: 1, y: -45 } : {}}
                   transition={{ delay: 2.0, duration: 0.6 }}
                   whileHover={{ scale: 1.1 }}
                 >
@@ -279,9 +244,7 @@ export default function ProcessSection() {
 
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
-                }
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 2.2, duration: 0.6 }}
                 whileHover={{ scale: 1.1, rotate: -2 }}
                 className="absolute right-0 top-[50%] transform translate-y-[-50%] -z-10"
@@ -294,7 +257,7 @@ export default function ProcessSection() {
           <div className="h-full flex flex-col justify-center text-center lg:text-left order-1 lg:order-2 py-6">
             <motion.h2
               initial={{ opacity: 0, x: 30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 1.0, duration: 0.6 }}
               className="text-3xl sm:text-4xl lg:text-[64px] text-tight-compact mb-5 leading-tight group-hover:text-[#293deb] transition-colors duration-300"
             >
@@ -303,7 +266,7 @@ export default function ProcessSection() {
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, x: 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 1.2, duration: 0.6 }}
               className="text-lg lg:text-xl text-tight-compact"
             >
@@ -317,11 +280,7 @@ export default function ProcessSection() {
       <div className="flex justify-center mt-8 lg:mt-12">
         <motion.button
           initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          animate={
-            isInView
-              ? { opacity: 1, y: 0, scale: 1 }
-              : { opacity: 0, y: 30, scale: 0.9 }
-          }
+          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{
             type: "spring",
             stiffness: 200,
