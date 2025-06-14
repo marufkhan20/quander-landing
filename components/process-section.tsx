@@ -142,7 +142,8 @@ export default function ProcessSection() {
               animate="animate"
               className="relative"
             >
-              <Image
+              <img
+                loading="lazy"
                 className="w-[250px] lg:w-[300px] -mb-20 mt-[52px] rounded-[28px] border-4 border-white shadow-2xl"
                 src="/images/ad.gif"
                 alt="ad"
