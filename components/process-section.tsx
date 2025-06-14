@@ -1,9 +1,9 @@
 "use client";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -14,7 +14,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 60,
@@ -33,7 +33,7 @@ const cardVariants = {
   },
 };
 
-const floatingVariants = {
+const floatingVariants: Variants = {
   animate: {
     y: [-10, 10, -10],
     transition: {
@@ -44,7 +44,7 @@ const floatingVariants = {
   },
 };
 
-const circleVariants = {
+const circleVariants: Variants = {
   animate: {
     rotate: 360,
     transition: {
