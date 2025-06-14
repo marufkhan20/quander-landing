@@ -1,9 +1,9 @@
 "use client";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -14,7 +14,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 50,
@@ -33,7 +33,7 @@ const cardVariants = {
   },
 };
 
-const imageVariants = {
+const imageVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
@@ -47,19 +47,19 @@ const imageVariants = {
   },
 };
 
-const videoCardVariants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 15,
-      staggerChildren: 0.1,
-    },
-  },
-};
+// const videoCardVariants = {
+//   hidden: { opacity: 0, x: -30 },
+//   visible: {
+//     opacity: 1,
+//     x: 0,
+//     transition: {
+//       type: "spring",
+//       stiffness: 120,
+//       damping: 15,
+//       staggerChildren: 0.1,
+//     },
+//   },
+// };
 
 export default function WorkflowSection() {
   const ref = useRef(null);
