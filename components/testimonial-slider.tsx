@@ -1,10 +1,10 @@
-"use client"
-import { motion } from "framer-motion"
-import clsx from "clsx"
-import Autoplay from "embla-carousel-autoplay"
-import useEmblaCarousel from "embla-carousel-react"
-import { useCallback, useEffect, useState } from "react"
-import Image from "next/image"
+"use client";
+import clsx from "clsx";
+import Autoplay from "embla-carousel-autoplay";
+import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -25,30 +25,30 @@ const testimonials = [
     meta: "35, Austin",
     image: "https://randomuser.me/api/portraits/men/41.jpg",
   },
-]
+];
 
 export default function TestimonialSlider() {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "center" }, [
     Autoplay({ delay: 5000, stopOnInteraction: false }),
-  ])
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  ]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onSelect = useCallback(() => {
-    if (!embla) return
-    setSelectedIndex(embla.selectedScrollSnap())
-  }, [embla])
+    if (!embla) return;
+    setSelectedIndex(embla.selectedScrollSnap());
+  }, [embla]);
 
   useEffect(() => {
-    if (!embla) return
-    embla.on("select", onSelect)
-    embla.on("reInit", onSelect)
-    onSelect()
-  }, [embla, onSelect])
+    if (!embla) return;
+    embla.on("select", onSelect);
+    embla.on("reInit", onSelect);
+    onSelect();
+  }, [embla, onSelect]);
 
   const scrollTo = (index: number) => {
-    if (!embla) return
-    embla.scrollTo(index)
-  }
+    if (!embla) return;
+    embla.scrollTo(index);
+  };
 
   return (
     <div className="max-w-5xl mx-auto px-4">
@@ -91,7 +91,9 @@ export default function TestimonialSlider() {
               <motion.div
                 className={clsx(
                   "p-6 rounded-lg transition-opacity transition-transform duration-500 ease-in-out text-center",
-                  selectedIndex === index ? "opacity-100 scale-100" : "opacity-50 scale-95",
+                  selectedIndex === index
+                    ? "opacity-100 scale-100"
+                    : "opacity-50 scale-95"
                 )}
                 animate={{
                   scale: selectedIndex === index ? 1 : 0.95,
@@ -99,7 +101,9 @@ export default function TestimonialSlider() {
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <p className="text-xl md:text-3xl lg:text-4xl text-tight-compact mb-8 font-normal">"{item.text}"</p>
+                <p className="text-xl md:text-3xl lg:text-4xl text-tight-compact mb-8 font-normal">
+                  &quot;{item.text}&quot;
+                </p>
                 <div className="flex justify-center items-center gap-6">
                   <Image
                     src={item.image || "/placeholder.svg"}
@@ -110,7 +114,9 @@ export default function TestimonialSlider() {
                   />
                   <div className="text-left flex flex-col gap-1">
                     <p className="text-lg text-tight-compact">{item.author}</p>
-                    <p className="text-lg text-tight-compact text-black/50">{item.meta}</p>
+                    <p className="text-lg text-tight-compact text-black/50">
+                      {item.meta}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -119,5 +125,5 @@ export default function TestimonialSlider() {
         </div>
       </div>
     </div>
-  )
+  );
 }
