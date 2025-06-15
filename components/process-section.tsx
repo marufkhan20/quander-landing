@@ -2,6 +2,7 @@
 import { motion, useInView, Variants } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import JoinWaitlistButton from "./join-waitlist-button";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -279,25 +280,7 @@ export default function ProcessSection() {
       </motion.div>
 
       <div className="flex justify-center mt-8 lg:mt-12">
-        <motion.button
-          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            damping: 20,
-            delay: 2.4,
-            duration: 0.6,
-          }}
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0 10px 30px rgba(41, 61, 235, 0.3)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="px-6 lg:px-8 py-3 lg:py-4 rounded-full text-white text-lg lg:text-xl join-btn cursor-pointer transition-all text-tight-compact"
-        >
-          Join Waitlist
-        </motion.button>
+        <JoinWaitlistButton size="md" />
       </div>
     </motion.section>
   );

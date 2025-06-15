@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import JoinWaitlistButton from "./join-waitlist-button";
 import Threads from "./Threads";
 
 export default function HeroSection() {
@@ -44,16 +45,13 @@ export default function HeroSection() {
           marketing.
         </motion.p>
 
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-6 lg:px-8 py-3 lg:py-4 rounded-full text-white text-lg lg:text-xl join-btn cursor-pointer transition-all text-tight-compact"
         >
-          Join Waitlist
-        </motion.button>
+          <JoinWaitlistButton size="md" />
+        </motion.div>
       </div>
     </section>
   );

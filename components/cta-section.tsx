@@ -1,11 +1,11 @@
-"use client"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import JoinWaitlistButton from "./join-waitlist-button";
 
 export default function CTASection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <motion.section
@@ -27,21 +27,19 @@ export default function CTASection() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-center text-lg lg:text-xl text-tight-compact text-black/50"
       >
-        Join the brands replacing agencies with AI. Request your Quander demo today.
+        Join the brands replacing agencies with AI. Request your Quander demo
+        today.
       </motion.p>
 
       <div className="flex justify-center">
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-6 lg:px-8 py-3 lg:py-4 rounded-full text-white text-lg lg:text-xl join-btn cursor-pointer transition-all text-tight-compact"
         >
-          Join Waitlist
-        </motion.button>
+          <JoinWaitlistButton size="md" />
+        </motion.div>
       </div>
     </motion.section>
-  )
+  );
 }

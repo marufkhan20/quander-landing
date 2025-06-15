@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import JoinWaitlistButton from "./join-waitlist-button";
 
 export default function Navigation() {
   return (
@@ -41,13 +42,7 @@ export default function Navigation() {
         </li>
       </ul>
 
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-6 lg:px-8 py-3 lg:py-4 rounded-full text-white text-lg lg:text-xl join-btn cursor-pointer transition-all text-tight-compact"
-      >
-        Join Waitlist
-      </motion.button>
+      <JoinWaitlistButton size="md" />
     </motion.nav>
   );
 }
