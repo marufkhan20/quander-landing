@@ -9,7 +9,6 @@ import HeroSection from "@/components/hero-section";
 import Navigation from "@/components/navigation";
 import ProcessSection from "@/components/process-section";
 import TestimonialSection from "@/components/testimonial-section";
-import Threads from "@/components/Threads";
 import WorkflowSection from "@/components/workflow-section";
 
 export default function Home() {
@@ -24,14 +23,14 @@ export default function Home() {
       <TestimonialSection />
       <BrandsSection />
       <FAQSection />
-      <section className="h-[340px]">
+      {/* <section className="h-[340px]">
         <Threads
           amplitude={5}
           distance={0.7}
           enableMouseInteraction={false}
           color={[0, 0, 0]}
         />
-      </section>
+      </section> */}
       <CTASection />
       <Footer />
     </main>

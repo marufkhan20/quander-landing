@@ -1,19 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
 import JoinWaitlistButton from "./join-waitlist-button";
-import Threads from "./Threads";
 
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-[600px] lg:h-[700px] flex items-center justify-center">
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <Threads
           amplitude={5}
           distance={0.7}
           enableMouseInteraction={false}
           // color={[154, 154, 154]}
         />
-      </div>
+      </div> */}
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <motion.h1
